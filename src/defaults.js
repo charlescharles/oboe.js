@@ -10,9 +10,9 @@ function applyDefaults( passthrough, url, httpMethodName, body, headers, withCre
    if( body ) {
       if( !isString(body) ) {
 
-         // If the body is not a string andn processData is false, stringify it.
+         // If the body is not a string and processData is true, stringify it.
          //This allows objects to be given which will be sent as JSON.
-         if (!processData) {
+         if (processData) {
             body = JSON.stringify(body);
          }
 
