@@ -4,7 +4,7 @@
 // having a local undefined, window, Object etc allows slightly better minification:
 (function  (window, Object, Array, Error, JSON, undefined ) {
 
-   // v2.1.2-3-gfd1ea18
+   // v2.1.2-5-g4a4e973
 
 /*
 
@@ -2597,9 +2597,9 @@ function applyDefaults( passthrough, url, httpMethodName, body, headers, withCre
    if( body ) {
       if( !isString(body) ) {
 
-         // If the body is not a string andn processData is false, stringify it.
+         // If the body is not a string and processData is true, stringify it.
          //This allows objects to be given which will be sent as JSON.
-         if (!processData) {
+         if (processData) {
             body = JSON.stringify(body);
          }
 
